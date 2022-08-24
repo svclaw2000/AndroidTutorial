@@ -42,6 +42,7 @@ dependencies {
 
     implementation coroutines_android
     implementation hilt_android
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     kapt hilt_kapt
 
     implementation 'androidx.fragment:fragment-ktx:1.5.2'
