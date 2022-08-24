@@ -1,4 +1,17 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    ext {
+        coroutines_version = '1.6.1'
+        coroutines_android = "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version"
+        coroutines_core = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version"
+
+        hilt_version = '2.41'
+        hilt_core = "com.google.dagger:hilt-core:$hilt_version"
+        hilt_kapt = "com.google.dagger:hilt-android-compiler:$hilt_version"
+        hilt_android = "com.google.dagger:hilt-android:$hilt_version"
+    }
+}
+
 plugins {
     id 'com.android.application' version '7.2.0' apply false
     id 'com.android.library' version '7.2.0' apply false
