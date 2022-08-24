@@ -21,6 +21,10 @@ dependencies {
     implementation hilt_core
     kapt hilt_kapt
 
+    ext.retrofit_version = "2.7.2"
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+
     implementation project(":common")
     implementation project(":data")
 }

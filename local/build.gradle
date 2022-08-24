@@ -21,13 +21,21 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8
         freeCompilerArgs += '-opt-in=kotlinx.coroutines.ExperimentalCoroutinesApi'
+    }
+
+    kapt {
+        arguments {
+            arg("room.schemaLocation", "$projectDir/schemas")
+        }
     }
 }
 
@@ -36,6 +44,11 @@ dependencies {
     implementation coroutines_android
     implementation hilt_android
     kapt hilt_kapt
+
+    ext.room_version = '2.4.3'
+    implementation "androidx.room:room-runtime:$room_version"
+    implementation "androidx.room:room-ktx:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
 
     implementation 'androidx.core:core-ktx:1.8.0'
     testImplementation 'junit:junit:4.13.2'
