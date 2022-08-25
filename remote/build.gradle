@@ -21,6 +21,8 @@ dependencies {
     implementation hilt_core
     kapt hilt_kapt
 
+    testImplementation junit
+
     ext.retrofit_version = "2.7.2"
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"

@@ -9,6 +9,9 @@ buildscript {
         hilt_core = "com.google.dagger:hilt-core:$hilt_version"
         hilt_kapt = "com.google.dagger:hilt-android-compiler:$hilt_version"
         hilt_android = "com.google.dagger:hilt-android:$hilt_version"
+
+        junit_version = '4.13.2'
+        junit = "junit:junit:$junit_version"
     }
 }
 

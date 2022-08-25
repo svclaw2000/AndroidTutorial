@@ -21,6 +21,8 @@ dependencies {
     implementation hilt_core
     kapt hilt_kapt
 
+    testImplementation junit
+
     implementation project(":common")
     implementation project(":domain")
 }
