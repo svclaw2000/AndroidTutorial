@@ -1,3 +1,8 @@
 package kr.co.alm.mobile_tutorial.remote.service
 
-interface GithubService
+import kr.co.alm.mobile_tutorial.remote.model.RepositoryDTO
+
+interface GithubService {
+
+    suspend fun fetchRepositoryList(username: String): List<RepositoryDTO>
+}
