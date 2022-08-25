@@ -13,7 +13,7 @@ class GithubRepositoryImpl(
 ) : GithubRepository {
 
     override suspend fun fetchRepositoryList(username: String): Result<List<Repository>> {
-        TODO("Not yet implemented")
+        TODO("remote의 반환값을 interface에 맞게 변환한다")
     }
 
     override suspend fun addRepositoryHistory(repository: Repository): Result<Unit> {
