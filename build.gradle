@@ -4,6 +4,7 @@ buildscript {
         coroutines_version = '1.6.1'
         coroutines_android = "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version"
         coroutines_core = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version"
+        coroutines_test = "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutines_version"
 
         hilt_version = '2.41'
         hilt_core = "com.google.dagger:hilt-core:$hilt_version"

@@ -36,6 +36,8 @@ android {
 dependencies {
 
     implementation coroutines_core
+    testImplementation coroutines_test
+
     implementation hilt_core
     kapt hilt_kapt
 

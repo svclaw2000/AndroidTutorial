@@ -18,6 +18,8 @@ tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
 dependencies {
 
     implementation coroutines_core
+    testImplementation coroutines_test
+
     implementation hilt_core
     kapt hilt_kapt
 
