@@ -7,5 +7,5 @@ interface GithubRemoteDataSource {
 
     suspend fun fetchRepositoryList(username: String): Result<List<RepositoryData>>
 
-    suspend fun fetchCommitList(organizationName: String, repositoryName: String): Result<List<CommitData>>
+    suspend fun fetchCommitList(username: String, repositoryName: String): Result<List<CommitData>>
 }

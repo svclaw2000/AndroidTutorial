@@ -24,7 +24,7 @@ class GithubRepositoryImpl(
         TODO("Not yet implemented")
     }
 
-    override suspend fun fetchCommitList(organizationName: String, repositoryName: String): Result<List<Commit>> {
+    override suspend fun fetchCommitList(username: String, repositoryName: String): Result<List<Commit>> {
         TODO("Not yet implemented")
     }
 }

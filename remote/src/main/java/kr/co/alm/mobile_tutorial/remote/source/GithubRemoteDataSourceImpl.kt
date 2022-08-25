@@ -10,7 +10,7 @@ class GithubRemoteDataSourceImpl : GithubRemoteDataSource {
         TODO("Not yet implemented")
     }
 
-    override suspend fun fetchCommitList(organizationName: String, repositoryName: String): Result<List<CommitData>> {
+    override suspend fun fetchCommitList(username: String, repositoryName: String): Result<List<CommitData>> {
         TODO("Not yet implemented")
     }
 }

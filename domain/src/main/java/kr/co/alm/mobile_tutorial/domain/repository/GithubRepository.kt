@@ -12,5 +12,5 @@ interface GithubRepository {
 
     suspend fun fetchRepositoryHistoryList(): Result<List<RepositoryHistory>>
 
-    suspend fun fetchCommitList(organizationName: String, repositoryName: String): Result<List<Commit>>
+    suspend fun fetchCommitList(username: String, repositoryName: String): Result<List<Commit>>
 }
