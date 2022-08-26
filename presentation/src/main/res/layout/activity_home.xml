@@ -79,6 +79,7 @@
             android:text="@string/saveKeyword"
             android:textColor="@color/white"
             android:textSize="12sp"
+            android:onClick="@{() -> viewModel.saveKeyword()}"
             app:layout_constraintEnd_toStartOf="@id/button_loadKeyword"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/editText_keyword" />
@@ -97,6 +98,7 @@
             android:text="@string/loadKeyword"
             android:textColor="@color/white"
             android:textSize="12sp"
+            android:onClick="@{() -> viewModel.loadKeyword()}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/button_saveKeyword"
             app:layout_constraintTop_toBottomOf="@id/editText_keyword" />

@@ -8,11 +8,13 @@ import kotlinx.coroutines.flow.asStateFlow
 import park.keich.mobile_tutorial.domain.model.Repository
 import park.keich.mobile_tutorial.domain.repository.GithubRepository
 import kotlinx.coroutines.launch
+import park.keich.mobile_tutorial.domain.repository.KeywordRepository
 import javax.inject.Inject
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
     private val githubRepository: GithubRepository,
+    private val keywordRepository: KeywordRepository,
 ) : ViewModel() {
 
     val keyword = MutableStateFlow("")
@@ -24,6 +26,21 @@ class HomeViewModel @Inject constructor(
         viewModelScope.launch {
             githubRepository.fetchRepositoryList(keyword.value).onSuccess {
                 _repositoryList.value = it
+            }
+        }
+    }
+
+    fun saveKeyword() {
+        viewModelScope.launch {
+            keywordRepository.updateKeyword(keyword.value)
+        }
+    }
+
+    fun loadKeyword() {
+        viewModelScope.launch {
+            keywordRepository.fetchKeyword().onSuccess {
+                keyword.value = it
+                loadRepositoryList()
             }
         }
     }
