@@ -14,6 +14,10 @@ buildscript {
         junit_version = '4.13.2'
         junit = "junit:junit:$junit_version"
     }
+
+    dependencies {
+        classpath "com.google.dagger:hilt-android-gradle-plugin:$hilt_version"
+    }
 }
 
 plugins {
