@@ -22,27 +22,19 @@ class HomeActivity : AppCompatActivity() {
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.lifecycleOwner = this
+        binding.viewModel = viewModel
+
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
         binding.recyclerView.adapter = repositoryListAdapter
 
-        setViewListener()
         setDataListsner()
-    }
-
-    private fun setViewListener() {
-        binding.buttonSearch.setOnClickListener {
-            lifecycleScope.launch {
-                val keyword = binding.editTextKeyword.text.toString()
-                val repositoryList = viewModel.fetchRepositoryList(keyword)
-                repositoryListAdapter.submitList(repositoryList)
-            }
-        }
     }
 
     private fun setDataListsner() {
         lifecycleScope.launch {
             viewModel.repositoryList.collect {
-                // TODO("Not yet implemented")
+                repositoryListAdapter.submitList(it)
             }
         }
     }

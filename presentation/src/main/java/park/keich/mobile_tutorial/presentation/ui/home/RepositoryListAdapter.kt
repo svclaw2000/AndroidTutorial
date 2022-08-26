@@ -23,10 +23,8 @@ class RepositoryListAdapter : ListAdapter<Repository, RepositoryListAdapter.View
     class ViewHolder(private val binding: ItemRepositoryBinding) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(item: Repository) {
-            binding.textViewRepositoryName.text = item.name
-            binding.textViewUsername.text = item.username
-            binding.textViewStarCount.text = item.starCount.toString()
-            binding.textViewForkCount.text = item.forkCount.toString()
+            binding.repository = item
+            binding.executePendingBindings()
         }
     }
 
