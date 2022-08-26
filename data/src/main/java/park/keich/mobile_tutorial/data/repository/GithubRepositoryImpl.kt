@@ -14,7 +14,16 @@ class GithubRepositoryImpl @Inject constructor(
 ) : GithubRepository {
 
     override suspend fun fetchRepositoryList(username: String): Result<List<Repository>> {
-        TODO("remote의 반환값을 interface에 맞게 변환한다")
+        return remote.fetchRepositoryList(username).map { dataList ->
+            dataList.map { data ->
+                Repository(
+                    name = data.name,
+                    username = data.username,
+                    starCount = data.starCount,
+                    forkCount = data.forkCount,
+                )
+            }
+        }
     }
 
     override suspend fun addRepositoryHistory(repository: Repository): Result<Unit> {
