@@ -1,5 +1,6 @@
 package kr.co.alm.mobile_tutorial.data.repository
 
+import io.mockk.mockk
 import kotlinx.coroutines.test.runTest
 import kr.co.alm.mobile_tutorial.domain.repository.GithubRepository
 import kr.co.alm.mobile_tutorial.local.source.GithubLocalDataSourceImpl
@@ -15,7 +16,7 @@ class GithubRepositoryImplTest {
     @Before
     fun setUp() {
         repository = GithubRepositoryImpl(
-            local = GithubLocalDataSourceImpl(),
+            local = mockk(),
             remote = GithubRemoteDataSourceImpl(RemoteModule.provideGithubService()),
         )
     }
