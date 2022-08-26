@@ -25,4 +25,8 @@ class HomeViewModel @Inject constructor(
     fun loadRepositoryList() {
         TODO("Not yet implemented")
     }
+
+    fun addRepositoryHistory(repository: Repository) {
+        TODO("Not yet implemented")
+    }
 }
