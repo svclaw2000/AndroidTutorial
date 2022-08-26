@@ -3,7 +3,10 @@ package kr.co.alm.mobile_tutorial.presentation.ui.home
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.launch
 import kr.co.alm.mobile_tutorial.presentation.R
 import kr.co.alm.mobile_tutorial.presentation.databinding.ActivityHomeBinding
 
@@ -23,9 +26,18 @@ class HomeActivity : AppCompatActivity() {
         binding.recyclerView.adapter = repositoryListAdapter
 
         setViewListener()
+        setDataListsner()
     }
 
     private fun setViewListener() {
         TODO("검색을 클릭하면 검색 결과를 화면에 표시한다.")
+    }
+
+    private fun setDataListsner() {
+        lifecycleScope.launch {
+            viewModel.repositoryList.collect {
+                // TODO("Not yet implemented")
+            }
+        }
     }
 }
