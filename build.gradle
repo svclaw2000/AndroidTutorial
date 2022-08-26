@@ -13,6 +13,9 @@ buildscript {
 
         junit_version = '4.13.2'
         junit = "junit:junit:$junit_version"
+
+        mockk_version = '1.12.3'
+        mockk = "io.mockk:mockk:$mockk_version"
     }
 
     dependencies {
