@@ -20,7 +20,7 @@ class RepositoryListAdapter : ListAdapter<Repository, RepositoryListAdapter.View
     }
 ) {
 
-    class ViewHolder(binding: ItemRepositoryBinding) : RecyclerView.ViewHolder(binding.root) {
+    class ViewHolder(private val binding: ItemRepositoryBinding) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(item: Repository) {
             TODO("해당 Repository의 정보를 화면에 표시한다.")
