@@ -30,7 +30,13 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun setViewListener() {
-        // TODO("검색을 클릭하면 검색 결과를 화면에 표시한다.")
+        binding.buttonSearch.setOnClickListener {
+            lifecycleScope.launch {
+                val keyword = binding.editTextKeyword.text.toString()
+                val repositoryList = viewModel.fetchRepositoryList(keyword)
+                repositoryListAdapter.submitList(repositoryList)
+            }
+        }
     }
 
     private fun setDataListsner() {

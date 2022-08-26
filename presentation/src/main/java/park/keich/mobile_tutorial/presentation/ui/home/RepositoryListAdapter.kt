@@ -11,11 +11,11 @@ import park.keich.mobile_tutorial.presentation.databinding.ItemRepositoryBinding
 class RepositoryListAdapter : ListAdapter<Repository, RepositoryListAdapter.ViewHolder>(
     object : DiffUtil.ItemCallback<Repository>() {
         override fun areItemsTheSame(oldItem: Repository, newItem: Repository): Boolean {
-            TODO("Not yet implemented")
+            return oldItem.username == newItem.username && oldItem.name == newItem.name
         }
 
         override fun areContentsTheSame(oldItem: Repository, newItem: Repository): Boolean {
-            TODO("Not yet implemented")
+            return oldItem == newItem
         }
     }
 ) {
@@ -23,7 +23,10 @@ class RepositoryListAdapter : ListAdapter<Repository, RepositoryListAdapter.View
     class ViewHolder(private val binding: ItemRepositoryBinding) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(item: Repository) {
-            TODO("해당 Repository의 정보를 화면에 표시한다.")
+            binding.textViewRepositoryName.text = item.name
+            binding.textViewUsername.text = item.username
+            binding.textViewStarCount.text = item.starCount.toString()
+            binding.textViewForkCount.text = item.forkCount.toString()
         }
     }
 

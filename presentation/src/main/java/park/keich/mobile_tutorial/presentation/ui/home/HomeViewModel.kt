@@ -19,7 +19,7 @@ class HomeViewModel @Inject constructor(
     val repositoryList = _repositoryList.asStateFlow()
 
     suspend fun fetchRepositoryList(username: String): List<Repository> {
-        TODO("Not yet implemented")
+        return githubRepository.fetchRepositoryList(username).getOrDefault(emptyList())
     }
 
     fun loadRepositoryList() {

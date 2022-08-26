@@ -4,4 +4,6 @@
     <string name="hint_keyword">Username</string>
     <string name="saveKeyword">검색어 저장하기</string>
     <string name="loadKeyword">검색어 불러오기</string>
+    <string name="star">star</string>
+    <string name="fork">fork</string>
 </resources>
