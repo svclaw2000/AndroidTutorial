@@ -18,7 +18,7 @@ class HomeViewModel @Inject constructor(
     private val _repositoryList = MutableStateFlow<List<Repository>>(emptyList())
     val repositoryList = _repositoryList.asStateFlow()
 
-    fun fetchRepositoryList(username: String): List<Repository> {
+    suspend fun fetchRepositoryList(username: String): List<Repository> {
         TODO("Not yet implemented")
     }
 
