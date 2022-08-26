@@ -3,7 +3,7 @@ package kr.co.alm.mobile_tutorial.data.repository
 import kotlinx.coroutines.test.runTest
 import kr.co.alm.mobile_tutorial.domain.repository.GithubRepository
 import kr.co.alm.mobile_tutorial.local.source.GithubLocalDataSourceImpl
-import kr.co.alm.mobile_tutorial.remote.retrofit.GithubRetrofitModule
+import kr.co.alm.mobile_tutorial.remote.di.RemoteModule
 import kr.co.alm.mobile_tutorial.remote.source.GithubRemoteDataSourceImpl
 import org.junit.Before
 import org.junit.Test
@@ -16,7 +16,7 @@ class GithubRepositoryImplTest {
     fun setUp() {
         repository = GithubRepositoryImpl(
             local = GithubLocalDataSourceImpl(),
-            remote = GithubRemoteDataSourceImpl(GithubRetrofitModule().githubService),
+            remote = GithubRemoteDataSourceImpl(RemoteModule.provideGithubService()),
         )
     }
 

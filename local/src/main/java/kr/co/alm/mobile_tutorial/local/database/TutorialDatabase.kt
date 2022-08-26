@@ -5,9 +5,10 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import kr.co.alm.mobile_tutorial.local.dao.GithubHistoryDao
+import kr.co.alm.mobile_tutorial.local.model.RepositoryHistoryEntity
 
 @Database(
-    entities = [],
+    entities = [RepositoryHistoryEntity::class],
     version = 1,
 )
 abstract class TutorialDatabase : RoomDatabase() {
