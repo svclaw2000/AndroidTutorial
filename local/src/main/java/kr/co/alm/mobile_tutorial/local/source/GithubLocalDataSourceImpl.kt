@@ -3,8 +3,10 @@ package kr.co.alm.mobile_tutorial.local.source
 import kr.co.alm.mobile_tutorial.data.model.RepositoryData
 import kr.co.alm.mobile_tutorial.data.model.RepositoryHistoryData
 import kr.co.alm.mobile_tutorial.data.source.local.GithubLocalDataSource
+import javax.inject.Inject
 
-class GithubLocalDataSourceImpl : GithubLocalDataSource {
+class GithubLocalDataSourceImpl @Inject constructor(
+) : GithubLocalDataSource {
 
     override suspend fun addRepositoryHistory(repository: RepositoryData): Result<Unit> {
         TODO("Not yet implemented")

@@ -4,8 +4,9 @@ import kr.co.alm.mobile_tutorial.data.model.CommitData
 import kr.co.alm.mobile_tutorial.data.model.RepositoryData
 import kr.co.alm.mobile_tutorial.data.source.remote.GithubRemoteDataSource
 import kr.co.alm.mobile_tutorial.remote.service.GithubService
+import javax.inject.Inject
 
-class GithubRemoteDataSourceImpl(
+class GithubRemoteDataSourceImpl @Inject constructor(
     private val githubService: GithubService,
 ) : GithubRemoteDataSource {
 

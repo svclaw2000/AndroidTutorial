@@ -6,8 +6,9 @@ import kr.co.alm.mobile_tutorial.domain.model.Commit
 import kr.co.alm.mobile_tutorial.domain.model.Repository
 import kr.co.alm.mobile_tutorial.domain.model.RepositoryHistory
 import kr.co.alm.mobile_tutorial.domain.repository.GithubRepository
+import javax.inject.Inject
 
-class GithubRepositoryImpl(
+class GithubRepositoryImpl @Inject constructor(
     private val local: GithubLocalDataSource,
     private val remote: GithubRemoteDataSource,
 ) : GithubRepository {

@@ -1,12 +1,15 @@
 package kr.co.alm.mobile_tutorial.presentation.ui.home
 
 import androidx.lifecycle.ViewModel
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kr.co.alm.mobile_tutorial.domain.model.Repository
 import kr.co.alm.mobile_tutorial.domain.repository.GithubRepository
+import javax.inject.Inject
 
-class HomeViewModel(
+@HiltViewModel
+class HomeViewModel @Inject constructor(
     private val githubRepository: GithubRepository,
 ) : ViewModel() {
 
