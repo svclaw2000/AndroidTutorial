@@ -4,7 +4,7 @@ import android.content.SharedPreferences
 import kr.co.alm.mobile_tutorial.data.source.local.KeywordLocalDataSource
 
 class KeywordLocalDataSourceImpl(
-    sharedPreferences: SharedPreferences,
+    private val sharedPreferences: SharedPreferences,
 ) : KeywordLocalDataSource {
 
     override suspend fun updateKeyword(keyword: String): Result<Unit> {
