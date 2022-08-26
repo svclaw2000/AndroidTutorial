@@ -13,7 +13,14 @@ class GithubRemoteDataSourceImpl @Inject constructor(
     override suspend fun fetchRepositoryList(username: String): Result<List<RepositoryData>> {
         return runCatching {
             val dtoList = githubService.fetchRepositoryList(username)
-            TODO("dtoList: List<RepositoryDTO>를 List<RepositoryData>로 변환하여 return 한다.")
+            dtoList.map { dto ->
+                RepositoryData(
+                    name = dto.name,
+                    username = dto.user.name,
+                    starCount = dto.starCount,
+                    forkCount = dto.forkCount,
+                )
+            }
         }
     }
 
