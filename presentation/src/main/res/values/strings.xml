@@ -6,4 +6,7 @@
     <string name="loadKeyword">검색어 불러오기</string>
     <string name="star">star</string>
     <string name="fork">fork</string>
+    <string name="authorLabel">Author:</string>
+    <string name="emailLabel">Email:</string>
+    <string name="dateLabel">Date:</string>
 </resources>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="commit"
+            type="park.keich.mobile_tutorial.domain.model.Commit" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/rect_border"
+        android:padding="12dp">
+
+        <TextView
+            android:id="@+id/textView_repositoryName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{commit.message}"
+            android:textColor="@color/gray_80"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Commit Message" />
+
+        <TextView
+            android:id="@+id/textView_authorLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/authorLabel"
+            android:textColor="@color/gray_80"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView_repositoryName" />
+
+        <TextView
+            android:id="@+id/textView_author"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{commit.authorName}"
+            android:textColor="@color/gray_80"
+            android:textSize="12sp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/textView_authorLabel"
+            app:layout_constraintTop_toTopOf="@id/textView_authorLabel"
+            tools:text="AuthorName" />
+
+        <TextView
+            android:id="@+id/textView_emailLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/emailLabel"
+            android:textColor="@color/gray_80"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView_authorLabel" />
+
+        <TextView
+            android:id="@+id/textView_email"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{commit.authorEmail}"
+            android:textColor="@color/gray_80"
+            android:textSize="12sp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/textView_emailLabel"
+            app:layout_constraintTop_toTopOf="@id/textView_emailLabel"
+            tools:text="AuthorEmail" />
+
+        <TextView
+            android:id="@+id/textView_dateLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/dateLabel"
+            android:textColor="@color/gray_80"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView_emailLabel" />
+
+        <TextView
+            android:id="@+id/textView_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/gray_80"
+            android:textSize="12sp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/textView_dateLabel"
+            app:layout_constraintTop_toTopOf="@id/textView_dateLabel"
+            tools:text="2022년 08월 24일 16시 20분 14초" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
