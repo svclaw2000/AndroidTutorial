@@ -1,5 +1,6 @@
 package park.keich.mobile_tutorial.data.repository
 
+import park.keich.mobile_tutorial.data.model.RepositoryData
 import park.keich.mobile_tutorial.data.source.local.GithubLocalDataSource
 import park.keich.mobile_tutorial.data.source.remote.GithubRemoteDataSource
 import park.keich.mobile_tutorial.domain.model.Commit
@@ -27,11 +28,28 @@ class GithubRepositoryImpl @Inject constructor(
     }
 
     override suspend fun addRepositoryHistory(repository: Repository): Result<Unit> {
-        TODO("Not yet implemented")
+        return local.addRepositoryHistory(
+            RepositoryData(
+                name = repository.name,
+                username = repository.username,
+                starCount = repository.starCount,
+                forkCount = repository.forkCount,
+            )
+        )
     }
 
     override suspend fun fetchRepositoryHistoryList(): Result<List<RepositoryHistory>> {
-        TODO("Not yet implemented")
+        return local.fetchRepositoryHistoryList().map { dataList ->
+            dataList.map { data ->
+                RepositoryHistory(
+                    name = data.name,
+                    username = data.username,
+                    starCount = data.starCount,
+                    forkCount = data.forkCount,
+                    visitedDate = data.visitedDate,
+                )
+            }
+        }
     }
 
     override suspend fun fetchCommitList(username: String, repositoryName: String): Result<List<Commit>> {
