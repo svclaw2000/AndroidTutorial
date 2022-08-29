@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="kr.co.alm.mobile_tutorial.presentation">
+    package="park.keich.mobile_tutorial.presentation">
 
     <application>
         <activity

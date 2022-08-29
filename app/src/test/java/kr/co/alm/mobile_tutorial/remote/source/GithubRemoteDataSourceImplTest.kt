@@ -1,10 +1,10 @@
-package kr.co.alm.mobile_tutorial.remote.source
+package park.keich.mobile_tutorial.remote.source
 
 import kotlinx.coroutines.test.runTest
-import kr.co.alm.mobile_tutorial.data.source.remote.GithubRemoteDataSource
-import kr.co.alm.mobile_tutorial.remote.di.RemoteModule
 import org.junit.Before
 import org.junit.Test
+import park.keich.mobile_tutorial.data.source.remote.GithubRemoteDataSource
+import park.keich.mobile_tutorial.remote.di.RemoteModule
 
 class GithubRemoteDataSourceImplTest {
 
