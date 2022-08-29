@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="history"
+            type="park.keich.mobile_tutorial.domain.model.RepositoryHistory" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/rect_border"
+        android:padding="12dp">
+
+        <TextView
+            android:id="@+id/textView_repositoryName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/gray_80"
+            android:textSize="16sp"
+            android:text="@{history.name}"
+            app:layout_constraintEnd_toStartOf="@id/textView_date"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="RepositoryName" />
+
+        <TextView
+            android:id="@+id/textView_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/gray_80"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="2022-08-24 16:00" />
+
+        <TextView
+            android:id="@+id/textView_username"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/gray_80"
+            android:textSize="12sp"
+            android:text="@{history.username}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView_repositoryName"
+            tools:text="Username" />
+
+        <TextView
+            android:id="@+id/textView_starLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/star"
+            android:textColor="@color/gray_80"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView_username" />
+
+        <TextView
+            android:id="@+id/textView_starCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:textColor="@color/gray_80"
+            android:textSize="12sp"
+            android:text="@{String.valueOf(history.starCount)}"
+            app:layout_constraintStart_toEndOf="@id/textView_starLabel"
+            app:layout_constraintTop_toTopOf="@id/textView_starLabel"
+            tools:text="12" />
+
+        <TextView
+            android:id="@+id/textView_forkLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@string/fork"
+            android:textColor="@color/gray_80"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@id/textView_starCount"
+            app:layout_constraintTop_toTopOf="@id/textView_starLabel" />
+
+        <TextView
+            android:id="@+id/textView_forkCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:textColor="@color/gray_80"
+            android:textSize="12sp"
+            android:text="@{String.valueOf(history.forkCount)}"
+            app:layout_constraintStart_toEndOf="@id/textView_forkLabel"
+            app:layout_constraintTop_toTopOf="@id/textView_starLabel"
+            tools:text="12" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
