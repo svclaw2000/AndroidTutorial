@@ -7,7 +7,7 @@ import park.keich.mobile_tutorial.local.model.RepositoryHistoryEntity
 
 @Database(
     entities = [RepositoryHistoryEntity::class],
-    version = 1,
+    version = 2,
 )
 abstract class TutorialDatabase : RoomDatabase() {
 
