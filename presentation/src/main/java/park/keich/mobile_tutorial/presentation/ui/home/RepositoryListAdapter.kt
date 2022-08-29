@@ -8,7 +8,9 @@ import androidx.recyclerview.widget.RecyclerView
 import park.keich.mobile_tutorial.domain.model.Repository
 import park.keich.mobile_tutorial.presentation.databinding.ItemRepositoryBinding
 
-class RepositoryListAdapter : ListAdapter<Repository, RepositoryListAdapter.ViewHolder>(
+class RepositoryListAdapter(
+    private val onItemClick: (Repository) -> Unit
+) : ListAdapter<Repository, RepositoryListAdapter.ViewHolder>(
     object : DiffUtil.ItemCallback<Repository>() {
         override fun areItemsTheSame(oldItem: Repository, newItem: Repository): Boolean {
             return oldItem.username == newItem.username && oldItem.name == newItem.name
@@ -20,11 +22,12 @@ class RepositoryListAdapter : ListAdapter<Repository, RepositoryListAdapter.View
     }
 ) {
 
-    class ViewHolder(private val binding: ItemRepositoryBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class ViewHolder(private val binding: ItemRepositoryBinding) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(item: Repository) {
             binding.repository = item
             binding.executePendingBindings()
+            binding.root.setOnClickListener { onItemClick(item) }
         }
     }
 
