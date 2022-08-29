@@ -35,6 +35,15 @@ class GithubRepositoryImpl @Inject constructor(
     }
 
     override suspend fun fetchCommitList(username: String, repositoryName: String): Result<List<Commit>> {
-        TODO("Not yet implemented")
+        return remote.fetchCommitList(username, repositoryName).map { dataList ->
+            dataList.map { data ->
+                Commit(
+                    message = data.message,
+                    authorName = data.authorName,
+                    authorEmail = data.authorEmail,
+                    date = data.date,
+                )
+            }
+        }
     }
 }
