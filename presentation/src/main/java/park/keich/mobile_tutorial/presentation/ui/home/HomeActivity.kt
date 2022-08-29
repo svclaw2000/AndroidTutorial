@@ -10,6 +10,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import park.keich.mobile_tutorial.presentation.databinding.ActivityHomeBinding
 import park.keich.mobile_tutorial.presentation.ui.commit.CommitActivity
+import park.keich.mobile_tutorial.presentation.ui.history.HistoryActivity
 
 @AndroidEntryPoint
 class HomeActivity : AppCompatActivity() {
@@ -18,6 +19,7 @@ class HomeActivity : AppCompatActivity() {
     private val viewModel: HomeViewModel by viewModels()
 
     private val repositoryListAdapter = RepositoryListAdapter {
+        viewModel.addRepositoryHistory(it)
         val intent = Intent(this, CommitActivity::class.java).apply {
             putExtra("username", it.username)
             putExtra("repositoryName", it.name)
@@ -35,6 +37,10 @@ class HomeActivity : AppCompatActivity() {
 
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
         binding.recyclerView.adapter = repositoryListAdapter
+
+        binding.buttonHistory.setOnClickListener {
+            startActivity(Intent(this, HistoryActivity::class.java))
+        }
 
         setDataListsner()
     }

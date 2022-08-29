@@ -46,6 +46,8 @@ class HomeViewModel @Inject constructor(
     }
 
     fun addRepositoryHistory(repository: Repository) {
-        TODO("Not yet implemented")
+        viewModelScope.launch {
+            githubRepository.addRepositoryHistory(repository)
+        }
     }
 }
